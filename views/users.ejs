@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<% for(var i = 0; i < users.length; i++) { %>
+			<li>
+				<p>
+					<span>name:</span>
+					<span><%= users[i].name %></span>
+				</p>
+				<p>
+					<span>password:</span>
+					<span><%= users[i].password %></span>
+				</p>			
+			</li>
+		<% } %>
+	</ul>
+</body>
+</html>
