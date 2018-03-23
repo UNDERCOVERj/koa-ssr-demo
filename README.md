@@ -1,7 +1,7 @@
 # 起步式
 
 ```
-git clone xxxx
+git clone git@github.com:UNDERCOVERj/koa-ssr-demo.git
 cd koa-ssr-demo
 npm install
 node index.js
