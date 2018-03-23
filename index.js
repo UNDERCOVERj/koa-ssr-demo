@@ -55,6 +55,7 @@ function isFloatInteger (num) {
 
 router
 	.get('/users/:id', async (ctx, next) => {
+		// console.log('bbb')
 		let id = ctx.params.id;
 		if (isFloatInteger(id)) {
 			let page = parseInt(id) - 1;
@@ -73,9 +74,16 @@ router
 			errorMsg: db.errorMsg
 		})
 	})
-	.get('/*', async (ctx, next) => {
+	// .get('/*', async (ctx, next) => {
+	// 	ctx.redirect('/error');
+	// })
+
+app.use(async (ctx, next) => {
+	await next();
+	if (ctx.status === 404) {
 		ctx.redirect('/error');
-	})	
+	}
+})
 
 app.use(router.routes())
 	.use(router.allowedMethods());
