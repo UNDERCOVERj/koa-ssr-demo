@@ -14,3 +14,5 @@ node index.js
 如果id不为整数，则重定向到/error
 
 除此两个路由都重定向到/error
+
+处理不匹配路由，可根据status来跳转到404页面
